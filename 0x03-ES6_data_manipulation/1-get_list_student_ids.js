@@ -6,11 +6,9 @@
  * @param {Array} list - An array of student objects, where each object contains an id property.
  * @returns {Array} - An array of ids extracted from the student objects, or an empty array if the input is not an array.
  */
-
-export default function getListStudentIds(list) {
-  if (!Array.isArray(list)) {
-    return [];
+export default function getListStudentIds(students) {
+  if (students instanceof Array) {
+    return students.map((student) => student.id);
   }
-
-  return list.map((list) => list.id);
+  return [];
 }
